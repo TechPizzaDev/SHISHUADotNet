@@ -1,12 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <TargetFramework>net8.0</TargetFramework>
-    <RootNamespace>SHISHUA_CSHARP</RootNamespace>
+    <RootNamespace>SHISHUADotNet</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AssemblyName>SHISHUADotNet</AssemblyName>
+    <PlatformTarget>x64</PlatformTarget>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <Title>SHISHUA.NET</Title>
+    <Description>A .NET 8 implementation of the SHISHUA randomizer algorithm.</Description>
   </PropertyGroup>
 
 </Project>

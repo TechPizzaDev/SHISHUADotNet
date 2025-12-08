@@ -1,4 +1,4 @@
-﻿
+﻿#if !RELEASE
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
 
-namespace SHISHUA_CSHARP {
+namespace SHISHUADotNet {
 	public class TestProgram {
 		private static void WriteByteArray(Span<byte> buf) {
 			for (int i = 0; i < buf.Length; i++) {
@@ -37,3 +37,4 @@ namespace SHISHUA_CSHARP {
 		}
 	}
 }
+#endif

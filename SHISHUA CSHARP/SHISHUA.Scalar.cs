@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SHISHUA_CSHARP {
+namespace SHISHUADotNet {
 	partial class SHISHUA {
 
 		// Scalar / "Universal" implementation.

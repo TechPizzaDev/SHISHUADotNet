@@ -9,7 +9,7 @@ using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SHISHUA_CSHARP {
+namespace SHISHUADotNet {
 
 	/// <summary>
 	/// SHISHUA is the world's fastest (as of 2025) pRNG. It is also incredibly resilient, passing PractRand

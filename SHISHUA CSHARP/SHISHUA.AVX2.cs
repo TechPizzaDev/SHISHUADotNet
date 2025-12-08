@@ -8,7 +8,7 @@ using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SHISHUA_CSHARP {
+namespace SHISHUADotNet {
 	partial class SHISHUA {
 
 		/// <summary>
