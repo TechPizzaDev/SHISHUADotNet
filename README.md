@@ -3,9 +3,9 @@
 > [!WARNING]  
 > SHISHUA should not be used for cryptographic purposes!
 
-A .NET reimplementation of [SHISHUA](https://github.com/espadrine/shishua), the 2025 world record holder for the fastest pRNG ever created. It is an incredibly efficient and equally resilient randomizer that is especially useful in cases where a lot of data needs to be generated in bulk.
+A .NET 8 reimplementation of [SHISHUA](https://github.com/espadrine/shishua), the 2025 world record holder for the fastest pRNG ever created. It is an incredibly efficient and equally resilient randomizer that is especially useful in cases where a lot of data needs to be generated in bulk.
 
-This port was originally made for [The Conservatory](https://xansworkshop.com/conservatory), an indie game by Xan's Workshop, but was ultimately deemed useful to the general public and was thus released here under the same license (CC0) as the original algorithm for free public use.
+This port was originally made for [The Conservatory](https://xansworkshop.com/conservatory), an indie game by Xan's Workshop, but was ultimately deemed useful to the general public and was thus released here under the same license as the original algorithm, CC0, for free public use.
 
 # Supported Variations
 
