@@ -21,10 +21,55 @@ namespace SHISHUA_CSHARP {
 
 
 		/// <summary>
+		/// An opaque container struct which holds the current state of an instance of the randomizer.
+		/// This can be used for static implementations of the randomizer.
+		/// </summary>
+		public struct SHISHUAState {
+
+			/// <summary>
+			/// The first 64 bits of the original seed value used to create this state.
+			/// </summary>
+			public readonly ulong originalSeed0;
+
+			/// <summary>
+			/// The second 64 bits of the original seed value used to create this state.
+			/// </summary>
+			public readonly ulong originalSeed1;
+
+			/// <summary>
+			/// The third 64 bits of the original seed value used to create this state.
+			/// </summary>
+			public readonly ulong originalSeed2;
+
+			/// <summary>
+			/// The fourth 64 bits of the original seed value used to create this state.
+			/// </summary>
+			public readonly ulong originalSeed3;
+
+			internal PrngState state;
+
+			/// <summary>
+			/// Create a new state using the provided seed values.
+			/// </summary>
+			/// <param name="seed0">The first 64 of 256 bits needed to create a seed.</param>
+			/// <param name="seed1">The second 64 of 256 bits needed to create a seed.</param>
+			/// <param name="seed2">The third 64 of 256 bits needed to create a seed.</param>
+			/// <param name="seed3">The fourth 64 of 256 bits needed to create a seed.</param>
+			public SHISHUAState(ulong seed0, ulong seed1, ulong seed2, ulong seed3) {
+				originalSeed0 = seed0;
+				originalSeed1 = seed1;
+				originalSeed2 = seed2;
+				originalSeed3 = seed3;
+				state = default;
+			}
+
+		}
+
+		/// <summary>
 		/// The pRNG state stores all values needed to iterate.
 		/// </summary>
 		[StructLayout(LayoutKind.Explicit, Pack = 4)]
-		private unsafe struct PrngState {
+		internal unsafe struct PrngState {
 			const int SIZEOF_I64 = 8;
 			const int SIZEOF_M128I = 16;
 			const int SIZEOF_M256I = 32;

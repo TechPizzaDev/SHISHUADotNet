@@ -16,11 +16,11 @@ namespace SHISHUA_CSHARP {
 		/// </summary>
 		/// <param name="state">The randomizer state.</param>
 		/// <param name="resultBuffer">The output buffer to store generated random bytes into. Can be <see langword="null"/> to skip storing data and advance the state anyway.</param>
-		/// <param name="generationSize">The amount of bytes to generate. If the <paramref name="resultBuffer"/> is not <see langword="null"/> (or, empty), this must match its size. Must be divisible by 128.</param>
+		/// <param name="generationSize">The amount of bytes to generate. If the <paramref name="resultBuffer"/> is not <see langword="null"/> (or, empty), this must be greater than or equal to its size. Must be divisible by 128.</param>
 		/// <exception cref="InvalidOperationException"></exception>
 		private static void Generate_AVX2(ref PrngState state, Span<byte> resultBuffer, int generationSize) {
 			if (!resultBuffer.IsEmpty) {
-				if (resultBuffer.Length != generationSize) throw new ArgumentException($"The {nameof(generationSize)} parameter must be equal to {nameof(resultBuffer)}.Length");
+				if (resultBuffer.Length < generationSize) throw new ArgumentException($"The {nameof(generationSize)} parameter must be greater than or equal to {nameof(resultBuffer)}.Length");
 				if (generationSize % 128 != 0) throw new ArgumentException($"The {nameof(generationSize)} parameter (and by extension {nameof(resultBuffer)}.Length) must be divisible by 128.");
 			}
 			Vector256<int> o0 = state.avx2_output0;

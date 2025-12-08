@@ -15,10 +15,10 @@ namespace SHISHUA_CSHARP {
 		/// </summary>
 		/// <param name="state">The randomizer state.</param>
 		/// <param name="resultBuffer">The output buffer to store generated random bytes into. Can be <see langword="null"/> to skip storing data and advance the state anyway.</param>
-		/// <param name="generationSize">The amount of bytes to generate. If the <paramref name="resultBuffer"/> is not <see langword="null"/> (or, empty), this must match its size. Must be divisible by 128.</param>
+		/// <param name="generationSize">The amount of bytes to generate. If the <paramref name="resultBuffer"/> is not <see langword="null"/> (or, empty), this must be greater than or equal to its size. Must be divisible by 128.</param>
 		private static unsafe void Generate_Scalar(ref PrngState state, Span<byte> resultBuffer, int generationSize) {
 			if (!resultBuffer.IsEmpty) {
-				if (resultBuffer.Length != generationSize) throw new ArgumentException($"The {nameof(generationSize)} parameter must be equal to {nameof(resultBuffer)}.Length");
+				if (resultBuffer.Length < generationSize) throw new ArgumentException($"The {nameof(generationSize)} parameter must be greater than or equal to {nameof(resultBuffer)}.Length");
 				if (generationSize % 128 != 0) throw new ArgumentException($"The {nameof(generationSize)} parameter (and by extension {nameof(resultBuffer)}.Length) must be divisible by 128.");
 			}
 
@@ -67,6 +67,15 @@ namespace SHISHUA_CSHARP {
 
 		}
 
+
+		/// <summary>
+		/// Initializes the randomizer state using scalar logic.
+		/// </summary>
+		/// <param name="seed0">The first 64 of 256 bits needed to create a seed.</param>
+		/// <param name="seed1">The second 64 of 256 bits needed to create a seed.</param>
+		/// <param name="seed2">The third 64 of 256 bits needed to create a seed.</param>
+		/// <param name="seed3">The fourth 64 of 256 bits needed to create a seed.</param>
+		/// <returns></returns>
 		private static unsafe PrngState Initialize_Scalar(ulong seed0, ulong seed1, ulong seed2, ulong seed3) {
 			const int STEPS = 1;
 			const int ROUNDS = 13;
