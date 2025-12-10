@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SHISHUADotNet {
-	partial class SHISHUA {
+	partial class SHISHUALegacy {
 
 		/// <summary>
 		/// The digits of Phi are used during initialization.

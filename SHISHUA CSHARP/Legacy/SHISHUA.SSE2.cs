@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SHISHUADotNet {
-	partial class SHISHUA {
+	partial class SHISHUALegacy {
 
 		// SSE2 Implementation. All 64 bit processors support this.
 

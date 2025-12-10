@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SHISHUADotNet {
-	partial class SHISHUA {
+	partial class SHISHUALegacy {
 
 		/// <summary>
 		/// The main routine of SHISHUA AVX2, translated to C#.
