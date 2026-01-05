@@ -3,6 +3,10 @@ using System.Runtime.Intrinsics;
 
 namespace SHISHUADotNet;
 
+// Note regarding Vector256.Shuffle:
+// Storing the mask in a local variable causes JIT to get *really* defensive about the code,
+// producing a scalar fallback. For this reason, you *must* put the parameter into the method call directly.
+
 internal static class V256Helper
 {
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
